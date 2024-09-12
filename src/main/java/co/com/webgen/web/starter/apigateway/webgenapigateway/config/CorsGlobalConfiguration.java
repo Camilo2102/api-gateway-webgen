@@ -1,5 +1,6 @@
 package co.com.webgen.web.starter.apigateway.webgenapigateway.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -13,8 +14,9 @@ public class CorsGlobalConfiguration {
 
     @Bean
     public CorsWebFilter corsWebFilter() {
+
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.addAllowedOrigin("*");
+        corsConfig.addAllowedOrigin("http://localhost:3000");
         corsConfig.addAllowedMethod("*");
         corsConfig.addAllowedHeader("*");
 
